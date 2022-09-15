@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Unique Characters</title>
+  <link rel="stylesheet" href="/all-unique-characters/main.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>All Unique Characters</h1><br>
+    <p>A prompt from <a
+        href="https://buttondown.email/cassidoo/archive/keep-your-face-always-toward-the-sunshine-and/">Cassidy
+        Williams' newsletter</a>: <br>Write a function that determines if all <br>the characters in a given string are
+      unique.</p><br>
+
+    <form class="form-start">
+      <input type="text" class="text" id="unique-text" placeholder="Insert your text" pattern="^[^\s].[A-Za-z\s]+[^\s]$"
+        focus required>
+      <input type="button" class="btn" id="submit" onclick="displayResult()" class="btn" value="Check Unique Text">
+    </form>
+  </div>
+
+<script src="/all-unique-characters/displayResult.js"></script>
+</body>
+
+</html>

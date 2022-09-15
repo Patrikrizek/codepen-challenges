@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+.tower {
+    transform: translate(calc(-250px / 2), calc(150px / 2)) scale(.5);
+}
+
+/* Level three */
+.level-three {
+    transform: translateY(-750px);
+}
+
+.level-three .marble{
+    transform: translate(200px, 20px) scale(2);
+}
+
+.level-three .marble-shadow {
+    transform: translate(230px, 80px) scale(2);
+}
+
+.level-three .cube-outline-left {
+    transform: skewY(26.5deg) translate(-50px, 150px);
+}
+
+/* Level two */
+.level-two {
+    transform: translate(-130px, -530px);
+}
+
+.level-two .marble{
+    transform: translate(-40px, 85px) scale(0.5);
+}
+
+.level-two .cube::before, .level-two .cube::after {
+    display: none;
+}
+
+/* Level one */
+.level-one {
+    transform: translate(100px, -250px);
+}
+
+.level-one .marble{
+    transform: translate(300px, 30px) scale(1.5);
+}
+
+.level-one .marble-shadow {
+    transform: translate(320px, 80px) scale(1.5);
+}
+
+.level-one .cube-outline-right:nth-child(1) {
+    transform: skewY(-26.5deg) translate(200px, 230px);
+}
+
+.level-one .cube-outline-right:nth-child(2) {
+    transform: skewY(-26.5deg) translate(300px, 340px);
+}
+
+/* Level ground */
+.level-ground .marble{
+    transform: translate(0px, 60px) scale(0.7);
+}
+
+.level-ground .marble-shadow {
+    transform: translate(10px, 90px) scale(0.7);
+}
+
+.level-ground .cube::before, .level-ground .cube::after {
+    display: none;
+}
+
+.cube {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background:
+        linear-gradient(0deg, #2B86C5, transparent 50%),
+        linear-gradient(45deg,#F76B1C, transparent 50%),
+        linear-gradient(135deg, #4158D0, transparent 50%),
+        linear-gradient(180deg, #FF2525, transparent 50%),
+        linear-gradient(225deg, #f8ff2b, transparent 50%),
+        linear-gradient(315deg, #80D0C7, transparent 50%);
+    background-color: rgb(186, 186, 186);
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    z-index: 0;
+}
+
+.cube::before {
+    content: "";
+    position: inherit;
+    height: 500px;
+    width: 500px;
+    background:
+        linear-gradient(0deg, #2B86C5, transparent 50%),
+        linear-gradient(45deg,#F76B1C, transparent 50%),
+        linear-gradient(135deg, #4158D0, transparent 50%),
+        linear-gradient(180deg, #f8ff2b, transparent 50%),
+        linear-gradient(225deg, #FF2525, transparent 50%),
+        linear-gradient(315deg, #80D0C7, transparent 50%);
+    clip-path: polygon(0 25%, 50% 50%, 50% 100%, 0 75%);
+}
+
+.cube::after {
+    content: "";
+    position: inherit;
+    height: 500px;
+    width: 500px;
+    background:
+        linear-gradient(0deg, #80D0C7, transparent 50%),
+        linear-gradient(45deg, #f8ff2b, transparent 50%),
+        linear-gradient(135deg, #FF2525, transparent 50%),
+        linear-gradient(180deg, #4158D0, transparent 50%),
+        linear-gradient(225deg,#F76B1C, transparent 50%),
+        linear-gradient(315deg, #2B86C5, transparent 50%);
+    clip-path: polygon(50% 50%, 100% 25%, 100% 75%, 50% 100%);
+}
+
+.cube-outline-left {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    border: 1px solid #4158D0;
+    z-index: 4;
+}
+
+.cube-outline-right {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    border: 1px solid #4158D0;
+    z-index: 4;
+}
+
+.marble {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background:
+        linear-gradient(0deg, #2B86C5, transparent 50%),
+        linear-gradient(45deg,#F76B1C, transparent 50%),
+        linear-gradient(135deg, #4158D0, transparent 50%),
+        linear-gradient(180deg, #FF2525, transparent 50%),
+        linear-gradient(225deg, #f8ff2b, transparent 50%),
+        linear-gradient(315deg, #80D0C7, transparent 50%);
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px #f8ff2b inset;
+    z-index: 2;
+}
+
+.marble-shadow {
+    position: absolute;
+    height: 50px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    transform:
+        rotateX(40deg) translate(30px, 50px);
+    filter: blur(3px);
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    right: -500px;
+    top: 0;
+    height: 1250px;
+    width: 500px;
+    background:
+        linear-gradient(270deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.1));
+        clip-path: polygon(0 10%, 50% 20%, 50% 100%, 0 90%);
+    z-index: 3; 
+}

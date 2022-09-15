@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal with Deletions</title>
+    <link rel="stylesheet" href="/equal-with-deletions/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Equal with Deletions</h1>
+
+        <p>A prompt from <a
+                href="https://buttondown.email/cassidoo/archive/5-time-moves-slowly-but-passes-quickly-alice/">Cassidy
+                Williams' newsletter</a>: "Given two strings n and m, return true if they are equal when both are
+            entered into text editors. But: a # means a backspace character (deleting backwards), and a % means a delete
+            character (deleting forwards)."</p>
+        <h2>Can you figure out the result text?</h2>
+
+        <p>The # symbol deletes characters(s) backwards, and the % deletes character(s) forwards.<br>Example:
+            w#ate%%%%%%rmelon &#10142; ate.</p>
+
+        <button id="textGenerator" class="btn" onclick="generateText()">Generate text</button>
+        <p id="textOne"></p>
+        <span>&#129047;</span>
+
+        <form>
+            <input type="text" name="text-two" id="textTwo">
+            <input type="button" id="submit" onclick="checkResult()" class="btn" value="Check">
+        </form>
+
+        <p id="correctAnswer"></p>
+    </div>
+
+    <script src="/equal-with-deletions/generateText.js"></script>
+</body>
+
+</html>
